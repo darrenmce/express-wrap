@@ -6,12 +6,12 @@ A node.js module to wrap a standard node module's functions into express functio
 ###Install
 
 ```
-npm install express-wrapper
+npm install express-wrap
 ```
 
 ###Usage
 
 ```
 var yourModule = require('your-module-here');
-var wrappedModule = require('express-wrapper')(yourModule);
+var wrappedModule = require('express-wrap')(yourModule);
 ```
