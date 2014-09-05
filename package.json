@@ -1,0 +1,23 @@
+{
+  "name": "express-wrap",
+  "version": "0.0.1",
+  "description": "A node.js module to wrap a standard node module's function into express functions.",
+  "main": "expressWrap.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darrenmce/express-wrap.git"
+  },
+  "keywords": [
+    "wrapper",
+    "express"
+  ],
+  "author": "darrenmce",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darrenmce/express-wrap/issues"
+  },
+  "homepage": "https://github.com/darrenmce/express-wrap"
+}
