@@ -28,7 +28,6 @@ function getParams(fn) {
 
 var ERR_NEED_BODY = 404;
 
-
 module.exports = function (moduleToWrap) {
 
   var wrapped = {};
@@ -37,9 +36,6 @@ module.exports = function (moduleToWrap) {
     var params = getParams(func);
 
     wrapped[funcName] = function (req, res) {
-      console.log(params);
-      console.log(func.toString());
-
       if (params.length > 0) {
         if (!req.body) {
           res.send(ERR_NEED_BODY);
