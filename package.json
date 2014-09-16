@@ -1,6 +1,6 @@
 {
   "name": "express-wrap",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A node.js module to wrap a standard node module's function into express functions.",
   "main": "expressWrap.js",
   "scripts": {
