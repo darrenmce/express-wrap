@@ -7,10 +7,9 @@ var FN_ARG_SPLIT = /,/;
 var FN_ARG = /^\s*(_?)(.+?)\1\s*$/;
 var STRIP_COMMENTS = /((\/\/.*$)|(\/\*[\s\S]*?\*\/))/mg;
 function getParams(fn) {
-  var $inject,
-    fnText,
+  var fnText,
     argDecl,
-    last;
+    params;
 
   if (typeof fn == 'function') {
     params = [];
@@ -21,10 +20,20 @@ function getParams(fn) {
         params.push(name);
       });
     });
+  } else if (_.isArray(fn)) {
+    var last = fn.length - 1;
+    params = fn.slice(0,last);
   }
   return params;
 }
 
+function getFunc(fn) {
+  if (typeof fn == 'function') {
+    return fn;
+  } else if (_.isArray(fn)) {
+    return fn[fn.length - 1];
+  }
+}
 
 var ERR_NEED_BODY = 404;
 
@@ -47,7 +56,7 @@ module.exports = function (moduleToWrap) {
         return req.body[param];
       });
 
-      res.send(func.apply(moduleToWrap, filledParams));
+      res.send(getFunc(func).apply(moduleToWrap, filledParams));
     };
   });
 

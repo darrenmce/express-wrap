@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/darrenmce/express-wrap/issues"
   },
-  "homepage": "https://github.com/darrenmce/express-wrap"
+  "homepage": "https://github.com/darrenmce/express-wrap",
+  "dependencies": {
+    "lodash" : "*"
+  }
 }
